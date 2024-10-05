@@ -205,82 +205,85 @@ span {
   color: black;
 }
 
-.textAnimation{
+.textAnimation {
   font-size: 34px;
   font-weight: 600;
   min-width: 280px;
 }
 
-.textAnimation span{
+.textAnimation span {
   position: relative;
 }
 
-.textAnimation span::before{
+.textAnimation span::before {
   content: "Web Developer";
   color: var(--main-color);
   animation: words 20s infinite;
 }
 
-.textAnimation span ::after{
-  content:"";
+.textAnimation span::after {
+  content: "";
   background-color: var(--bg-color);
   position: absolute;
   width: calc(100% + 8px);
   height: 100%;
   border-left: 3px solid var(--bg-color);
   right: -8px;
-  animation: cursor 0.6s infinite;
-  animation: typing 20s steps(10) infinite;
+  animation: cursor 0.6s infinite, typing 20s steps(10) infinite;
 }
 
-
-@keyframes cursor{
-  to{
+@keyframes cursor {
+  to {
     border-left: 2px solid var(--main-color);
   }
 }
 
-@keyframes words{
+@keyframes words {
   0%,
-  25%{
+  20% {
     content: "Front-End Developer";
   }
-  26%,
-  50%{
+  21%,
+  40% {
     content: "UI / UX Designer";
   }
-  51%,
-  75%{
+  41%,
+  60% {
     content: "Back-End Developer";
   }
-  76%,
-  100%{
+  61%,
+  80% {
     content: "Influencer";
   }
-  
+  81%,
+  100% {
+    content: "Web Developer";
+  }
 }
 
-
-/* .cs {
-  position: relative;
-
-  display: inline-block; /* Make sure the width changes take effect */
-  /* overflow: hidden; Hide overflowing content */
-  /* white-space: wrap; Prevent text from wrapping */
-  /* width: 0;  Start with width 0  */
-  /* animation:  cursor 0.6s infinite,typing 20s steps(30) infinite ; Adjust duration and steps as needed */
-  /* font-size: 15px;
- } */
-
-
 @keyframes typing {
-  0%, 10%,  35% {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
     width: 0;
   }
-  25%, 50%, 75%, 100% {
-    width: calc(100% + 10px); /* Adjust for text width + extra space */
-  }
-  50%, 55%, 70%, 75%, 90%, 95% {
-    width: 0;
+
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
   }
 }
